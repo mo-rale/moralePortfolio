@@ -2,6 +2,18 @@ const config = window.PORTFOLIO;
 document.querySelectorAll('[data-name]').forEach(el => { el.textContent = config.name; });
 document.title = `${config.name} — Developer & Visual Creator`;
 document.getElementById('year').textContent = new Date().getFullYear();
+const sidebar = document.getElementById('sidebar');
+const sidebarScrim = document.getElementById('sidebar-scrim');
+const menuToggle = document.getElementById('menu-toggle');
+function setMenu(open) {
+  sidebar.classList.toggle('open', open);
+  sidebarScrim.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+}
+menuToggle.addEventListener('click', () => setMenu(!sidebar.classList.contains('open')));
+document.getElementById('sidebar-close').addEventListener('click', () => setMenu(false));
+sidebarScrim.addEventListener('click', () => setMenu(false));
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(link => link.addEventListener('click', () => setMenu(false)));
 const dialogs = document.querySelectorAll('dialog');
 function openDialog(dialog) { dialog.showModal(); document.body.classList.add('modal-open'); }
 dialogs.forEach(dialog => {
