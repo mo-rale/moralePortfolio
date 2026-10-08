@@ -1,6 +1,6 @@
 // Update these details before sharing your portfolio with clients.
 window.PORTFOLIO = {
-  name: 'Ahron Badili',
+  name: 'Morale',
   email: 'morale.me29@gmail.com', // Your hiring email. A valid address enables the email inquiry button.
   projects: [
     { title: '50th Commencement highlights', category: 'Video editing / The Harpooner', description: 'A look back at the proud smiles, heartfelt celebrations, and memorable moments from the 50th Commencement Exercises of Bohol Island State University — Candijay Campus.', deliverables: ['Role: Video editor', 'Event highlight reel', 'Published by The Harpooner'], url: 'https://www.facebook.com/reel/1325924788965864', cta: 'Watch on Facebook' },

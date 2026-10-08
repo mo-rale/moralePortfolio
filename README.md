@@ -1,4 +1,4 @@
-# Ahron — Creative portfolio
+# Morale — Creative portfolio
 
 A responsive static portfolio for development, videography, and video editing. Open `dist/index.html` in a browser, or run `node preview.mjs` and visit the printed local address.
 
