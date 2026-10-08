@@ -1,6 +1,6 @@
 // Update these details before sharing your portfolio with clients.
 window.PORTFOLIO = {
-  name: 'Morale',
+  name: 'Ahron Badili',
   email: 'morale.me29@gmail.com', // Your hiring email. A valid address enables the email inquiry button.
   projects: [
     { title: '50th Commencement highlights', category: 'Video editing / The Harpooner', description: 'A look back at the proud smiles, heartfelt celebrations, and memorable moments from the 50th Commencement Exercises of Bohol Island State University — Candijay Campus.', deliverables: ['Role: Video editor', 'Event highlight reel', 'Published by The Harpooner'], image: 'commencement-highlight.jpg', video: true, embedUrl: 'https://www.youtube-nocookie.com/embed/L6aisKvkSk8?rel=0&modestbranding=1&playsinline=1', url: 'https://www.facebook.com/reel/1325924788965864', cta: 'Open on Facebook' },
@@ -10,4 +10,3 @@ window.PORTFOLIO = {
     { title: 'UNDERTOWN', category: 'Game development / Godot', description: 'A 2D top-down zombie shooter built with Godot Engine. Survive increasingly difficult waves, switch weapons, battle different enemy types, and face a boss.', deliverables: ['Godot Engine 4 project', 'Wave-based zombie survival', 'Weapons, enemies, sound, and menus'], image: 'github-undertown.png', url: 'https://github.com/mo-rale/UNDERTOWN', cta: 'View on GitHub' }
   ]
 };
-
