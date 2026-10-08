@@ -5,8 +5,8 @@ A responsive static portfolio for development, videography, and video editing. O
 ## Personalize before sharing
 
 - Set your display name and hiring email in `dist/content.js`. Until an email is supplied, inquiries can only be downloaded as project briefs; nothing is sent.
-- Replace the three clearly labeled concept studies with real projects. Edit their visible card titles in `dist/index.html` and detail content in `dist/content.js`.
-- Replace illustrative imagery with your own work. No client results, employers, testimonials, or credentials are claimed.
+- Add future projects by editing their visible cards in `dist/index.html` and detail content in `dist/content.js`.
+- Current work includes two published editing reels and three public GitHub projects.
 - Update the biography, page title, description, and copyright name as needed.
 
 The inquiry form opens the visitor’s email application when configured. It has no database or server-side submission service.

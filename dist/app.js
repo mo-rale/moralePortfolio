@@ -21,6 +21,7 @@ document.querySelectorAll('[data-project]').forEach(button => button.addEventLis
   document.getElementById('dialog-description').textContent = project.description;
   const list = document.getElementById('dialog-deliverables'); list.replaceChildren();
   project.deliverables.forEach(text => { const item = document.createElement('li'); item.textContent = text; list.append(item); });
+  const projectLink = document.getElementById('project-link'); projectLink.href = project.url; projectLink.textContent = project.cta;
   openDialog(projectDialog);
 }));
 document.querySelector('.dialog-contact').addEventListener('click', () => projectDialog.close());
