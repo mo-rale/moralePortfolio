@@ -19,3 +19,5 @@ The inquiry form opens the visitor’s email application when configured. It has
 - `dist/app.js`: filters, accessible dialogs, and inquiry behavior
 
 All `dist` files can be hosted by a static website provider. The font stylesheet uses Google Fonts with local system fallbacks.
+
+visit: https://mo-rale.github.io/moralePortfolio/dist/index.html
