@@ -18,3 +18,10 @@ document.querySelectorAll('[data-project]').forEach(function(button){button.addE
 projectDialog.addEventListener('close',function(){document.getElementById('dialog-video').src=''});
 document.querySelector('.dialog-contact').addEventListener('click',function(){projectDialog.close()});
 document.getElementById('inquiry-form').addEventListener('submit',function(event){event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;const values=new FormData(form),name=String(values.get('name')).trim(),email=String(values.get('email')).trim(),message=String(values.get('message')).trim();const brief='PROJECT INQUIRY\n\nName: '+name+'\nEmail: '+email+'\nServices: '+(values.getAll('service').join(', ')||'Let’s discuss')+'\n\nProject details:\n'+message;window.location.href='mailto:'+config.email.trim()+'?subject='+encodeURIComponent('Project inquiry from '+name)+'&body='+encodeURIComponent(brief);document.getElementById('form-status').textContent='Your email app should open. Review the message and send when ready.'});
+if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const revealTargets=document.querySelectorAll('.hero-bottom>*,.proof-stack>div,.section-heading>*,.filters>*,.project-card,.github-banner,.service-list article,.about-heading,.about-bio,.about-card,.achievement-copy>*,.achievement-post,.contact-copy>*,#contact form,footer>*');
+  const siblingCounts=new Map();
+  const revealObserver=new IntersectionObserver(function(entries,observer){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -32px 0px'});
+  revealTargets.forEach(function(target){const parent=target.parentElement,index=siblingCounts.get(parent)||0;siblingCounts.set(parent,index+1);target.style.setProperty('--reveal-delay',Math.min(index,4)*70+'ms');target.classList.add('motion-reveal');revealObserver.observe(target)});
+  document.body.classList.add('motion-enabled');
+}
