@@ -4,10 +4,11 @@ document.querySelectorAll('[data-name]').forEach(function(el){el.textContent=con
 document.title=config.name+' — Developer & Visual Creator';
 document.getElementById('year').textContent=new Date().getFullYear();
 const mobileMenu=document.getElementById('mobile-menu'),menuToggle=document.getElementById('menu-toggle');
-function setMenu(open){mobileMenu.classList.toggle('open',open);mobileMenu.setAttribute('aria-hidden',String(!open));menuToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)}
-menuToggle.addEventListener('click',function(){setMenu(true)});
-document.getElementById('menu-close').addEventListener('click',function(){setMenu(false)});
+function setMenu(open){mobileMenu.classList.toggle('open',open);mobileMenu.setAttribute('aria-hidden',String(!open));menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')}
+menuToggle.addEventListener('click',function(){setMenu(!mobileMenu.classList.contains('open'))});
 mobileMenu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){setMenu(false)})});
+document.addEventListener('click',function(event){if(!mobileMenu.contains(event.target)&&!menuToggle.contains(event.target))setMenu(false)});
+document.addEventListener('keydown',function(event){if(event.key==='Escape')setMenu(false)});
 const dialogs=document.querySelectorAll('dialog');
 function openDialog(dialog){dialog.showModal();document.body.classList.add('modal-open')}
 dialogs.forEach(function(dialog){dialog.querySelector('.close-dialog').addEventListener('click',function(){dialog.close()});dialog.addEventListener('close',function(){document.body.classList.remove('modal-open')});dialog.addEventListener('click',function(event){if(event.target===dialog)dialog.close()})});
