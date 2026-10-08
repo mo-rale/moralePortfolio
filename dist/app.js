@@ -1,4 +1,5 @@
 const config=window.PORTFOLIO;
+document.querySelectorAll('.tool-list').forEach(function(list){const track=document.createElement('div'),items=Array.from(list.children);track.className='tool-track';items.forEach(function(item){track.append(item)});items.forEach(function(item){const clone=item.cloneNode(true);clone.setAttribute('aria-hidden','true');track.append(clone)});list.append(track)});
 document.querySelectorAll('[data-name]').forEach(function(el){el.textContent=config.name});
 document.title=config.name+' — Developer & Visual Creator';
 document.getElementById('year').textContent=new Date().getFullYear();
